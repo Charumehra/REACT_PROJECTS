@@ -1,6 +1,28 @@
 import React from 'react'
 
 export default function Contact() {
+     const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "b22bf469-b09c-493d-bea1-f45bcc5ca380");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+     alert(res.message);
+    }
+  };
     return (
         <div className="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
             <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -38,7 +60,7 @@ export default function Contact() {
                                     />
                                 </svg>
                                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    Acme Inc, Street, State, Postal Code
+                                    Faridabad, Haryana,121003
                                 </div>
                             </div>
 
@@ -82,46 +104,50 @@ export default function Contact() {
                                     />
                                 </svg>
                                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                                    info@acme.org
+                                    charumehracm2004@gmail.com
                                 </div>
                             </div>
                         </div>
 
-                        <form className="p-6 flex flex-col justify-center">
+                        <form onSubmit={onSubmit}
+                         className="p-6 flex flex-col justify-center">
                             <div className="flex flex-col">
-                                <label for="name" className="hidden">
-                                    Full Name
+                                <label htmlfor="name" className="hidden" >
+                                    Full Name*
                                 </label>
                                 <input
                                     type="name"
                                     name="name"
                                     id="name"
+                                    required
                                     placeholder="Full Name"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
+                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none invalid:border-red-500"
                                 />
                             </div>
 
                             <div className="flex flex-col mt-2">
-                                <label for="email" className="hidden">
-                                    Email
+                                <label htmlfor="email" className="hidden" >
+                                    Email*
                                 </label>
                                 <input
                                     type="email"
                                     name="email"
                                     id="email"
+                                    required
                                     placeholder="Email"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
+                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none invalid:border-red-500"
                                 />
                             </div>
 
                             <div className="flex flex-col mt-2">
-                                <label for="tel" className="hidden">
-                                    Number
+                                <label htmlfor="tel" className="hidden" >
+                                    Number*
                                 </label>
                                 <input
                                     type="tel"
                                     name="tel"
                                     id="tel"
+                                    required
                                     placeholder="Telephone Number"
                                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
                                 />
