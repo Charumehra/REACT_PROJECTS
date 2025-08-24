@@ -1,5 +1,6 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 import "./App.css";
+import "./index.css";
 
 function App() {
   const [length, setlength] = useState(8);
