@@ -149,7 +149,7 @@ export default function Contact() {
                                     id="tel"
                                     required
                                     placeholder="Telephone Number"
-                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
+                                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none invalid:border-red-500"
                                 />
                             </div>
 
