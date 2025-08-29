@@ -21,6 +21,7 @@ export default function Contact() {
 
     if (res.success) {
      alert(res.message);
+        event.target.reset();
     }
   };
     return (
