@@ -401,7 +401,7 @@ function App() {
 
         <div className="flex justify-center mt-6 gap-6">
           <a
-            href="hhttps://github.com/Charumehra"
+            href="https://github.com/Charumehra"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white text-3xl transition transform hover:scale-125"
