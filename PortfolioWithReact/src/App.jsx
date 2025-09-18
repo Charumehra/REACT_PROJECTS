@@ -152,64 +152,88 @@ function App() {
         </div>
       </section>
 
+      
       <section id="about" className="py-20 px-6 relative">
-        <h2 className="text-4xl font-bold mb-16 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-          &lt;/About Me&gt;
-        </h2>
+  <h2 className="text-4xl font-bold mb-16 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+    &lt;/About Me&gt;
+  </h2>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 bg-[rgba(255,255,255,0.05)] backdrop-blur-xl rounded-2xl p-10 shadow-xl border border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/20 transition-all duration-500"
-        >
-          <motion.div
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="relative group"
-          >
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-purple-400 shadow-lg overflow-hidden transform transition duration-500 group-hover:scale-110 group-hover:shadow-purple-500/50">
-              <img
-                src={charu_photo}
-                alt="Charu Mehra"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="absolute inset-0 rounded-full border-4 border-purple-500 blur-md animate-pulse opacity-70 group-hover:opacity-100 transition"></div>
-          </motion.div>
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    viewport={{ once: true }}
+    className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 bg-[rgba(255,255,255,0.05)] backdrop-blur-xl rounded-2xl p-10 shadow-xl border border-white/10 hover:border-purple-500/50 hover:shadow-purple-500/20 transition-all duration-500"
+  >
+    <motion.div
+      initial={{ x: -80, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="relative group"
+    >
+      <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-purple-400 shadow-lg overflow-hidden transform transition duration-500 group-hover:scale-110 group-hover:shadow-purple-500/50">
+        <img
+          src={charu_photo}
+          alt="Charu Mehra"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="absolute inset-0 rounded-full border-4 border-purple-500 blur-md animate-pulse opacity-70 group-hover:opacity-100 transition"></div>
+    </motion.div>
 
-          <motion.div
-            initial={{ x: 80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="text-center md:text-left space-y-6"
-          >
-            <h3 className="text-3xl font-bold text-purple-300 hover:text-pink-400 transition duration-300 cursor-pointer">
-              Hi, I'm Charu 👋
-            </h3>
+    <motion.div
+      initial={{ x: 80, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="text-center md:text-left space-y-6"
+    >
+   
 
-            <p className="text-lg text-gray-300 leading-relaxed hover:text-gray-100 transition duration-300 cursor-default">
-              I’m{" "}
-              <span className="text-pink-400 font-semibold hover:text-pink-300">
-                Charu Mehra
-              </span>
-              , a passionate{" "}
-              <span className="text-purple-400 font-semibold hover:text-purple-300">
-                Frontend Developer
-              </span>{" "}
-              and a final year{" "}
-              <span className="text-blue-400 font-semibold hover:text-blue-300">
-                B.Tech CSE student
-              </span>{" "}
-              at Maharishi Dayanand University.
-            </p>
-          </motion.div>
-        </motion.div>
-      </section>
+      <p className="text-lg text-gray-300 leading-relaxed hover:text-gray-100 transition duration-300 cursor-default">
+        I’m{" "}
+        <span className="text-pink-400 font-semibold hover:text-pink-300">
+          Charu Mehra
+        </span>
+        , a passionate{" "}
+        <span className="text-purple-400 font-semibold hover:text-purple-300">
+          Frontend Developer
+        </span>{" "}
+        and a final year{" "}
+        <span className="text-blue-400 font-semibold hover:text-blue-300">
+          B.Tech CSE student
+        </span>{" "}
+        at Maharishi Dayanand University.
+      </p>
+
+      <p className="text-lg text-gray-300 leading-relaxed hover:text-gray-100 transition duration-300 cursor-default">
+        My journey into technology started with a curiosity for how websites and
+        apps work. From experimenting with simple HTML/CSS pages to learning
+        JavaScript and React, I’ve developed a strong foundation in creating
+        interactive and responsive web experiences. I’ve
+        explored various aspects of frontend development, including UI/UX
+        design, accessibility, and performance optimization.
+      </p>
+
+
+      <p className="text-lg text-gray-300 leading-relaxed hover:text-gray-100 transition duration-300 cursor-default">
+        In my free time, I love exploring design concepts, experimenting with
+        new frameworks, and engaging in problem-solving challenges. My goal is
+        to grow into a{" "}
+        <span className="text-blue-400 font-semibold hover:text-blue-300">
+          well-rounded Frontend Engineer
+        </span>{" "}
+        and eventually evolve into a{" "}
+        <span className="text-purple-400 font-semibold hover:text-purple-300">
+          Full-Stack Developer
+        </span>{" "}
+        capable of creating end-to-end solutions.
+      </p>
+    </motion.div>
+  </motion.div>
+</section>
+
 
       <section id="skills" className="py-16 px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-10 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -377,7 +401,7 @@ function App() {
 
         <div className="flex justify-center mt-6 gap-6">
           <a
-            href="https://github.com/YourUsername"
+            href="hhttps://github.com/Charumehra"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white text-3xl transition transform hover:scale-125"
@@ -385,7 +409,7 @@ function App() {
             <FaGithub />
           </a>
           <a
-            href="https://www.linkedin.com/in/YourLinkedIn/"
+            href="https://www.linkedin.com/in/charu-mehra-cm/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-blue-500 text-3xl transition transform hover:scale-125"
@@ -393,7 +417,7 @@ function App() {
             <FaLinkedin />
           </a>
           <a
-            href="https://www.instagram.com/YourInstagram/"
+            href="https://www.instagram.com/meh_charu17_/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-pink-500 text-3xl transition transform hover:scale-125"
@@ -401,7 +425,7 @@ function App() {
             <FaInstagram />
           </a>
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:charumehracm2004@gmail"
             className="text-gray-300 hover:text-red-500 text-3xl transition transform hover:scale-125"
           >
             <MdEmail />
