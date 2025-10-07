@@ -19,6 +19,8 @@ import png3 from "./assets/png3.png";
 import png4 from "./assets/png4.png";
 import png5 from "./assets/png5.png";
 import png6 from "./assets/png6.png";
+import png7 from "./assets/png7.png";
+import png8 from "./assets/png8.png";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -321,6 +323,17 @@ function App() {
               img: png3,
               link: "https://guess-the-number-lnz4nix9x-charumehras-projects.vercel.app/",
             },
+            {title: "Todo List", 
+              desc: "A simple todo list app using React and Local storage.", 
+              img: png7, 
+              link: "https://todohub-byreact.vercel.app/"
+            },
+            {
+              title: "TEN Tech Competition Engine",
+              desc:"Used React to create a web app for a tech competition.",
+              img: png8,
+              link:"https://github.com/UmaShankarBharawa/TEN-Tech-Competition-Engine"
+            }
           ].map((project) => (
             <motion.div
               key={project.title}
