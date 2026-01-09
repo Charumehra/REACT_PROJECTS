@@ -1,42 +1,33 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { AddToCart } from "./AddToCart";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, removeItem } from "./Services/Slice";
+import { fetchProducts } from "./Services/productSlice";
 
 function Product() {
-  const dispatch= useDispatch();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+  const productSelector = useSelector((state) => state.products.items);
+  console.log(productSelector);
   return (
     <div
-      className="product-card bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.1)] max-w-225 flex overflow-hidden
-"
-    >
-      <div
-        className="product-image flex-1
-"
-      >
-        <img
-          className="w-full h-full object-cover
-"
-          src="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg"
-          alt=""
-        />
+      className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-5">
+        {
+          productSelector.length && productSelector.map((item)=>(
+           <div key={item.id} className="card bg-white rounded-[10px] shadow-[0_2px_6px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col transition-all duration-300 ease-in-out hover:-translate-y-1.5">
+            <img src={item.thumbnail} className="w-full h-45 object-cover" />
+            <div className="content p-3.75 flex flex-col gap-2">
+              <div className="title text-[16px] font-bold whitespace-nowrap overflow-hidden truncate">{item.title}</div>
+              <div className="brand text-[13px] text-[#666] ">{item.brand}</div>
+              <div className="price text-[16px] font-bold text-[#2a9d8f]">${item.price}</div>
+              <div className="rating text-[13px] text-[#999] ">{item.rating}</div>
+              <button className="btn bg-[#457b9d] text-white py-3 px-6 border-none rounded-lg pointer text-[16px] transition-all duration-300 hover:bg-[#1d4d74] ">Add to Cart</button>
+            </div>
+           </div>
+          ))
+        }
       </div>
-      <div className="product-info flex-1 p-7.5">
-        <h1 className="text-[26px] mb-3.75">DSLR Camera</h1>
-        <p
-          className="price text-[22px] font-bold mb-5 text-[#e63946]
-"
-        >
-          $129.89
-        </p>
-        <p className="description text-[16px] text-[#555] mb-6.25 leading-normal">
-          High-quality DSLR camera delivering sharp images, fast autofocus, and
-          full creative control for stunning photography and videos.
-        </p>
-        <button onClick={()=>dispatch(AddToCart(1))} className="btn bg-[#457b9d]text-white py-3 px-6 border-none rounded-lg cursor-pointer text-[16px] transition duration-300 hover:bg-[#1d3557] hover:text-white">
-          Add to Cart
-        </button>
-      </div>
-    </div>
   );
 }
 
