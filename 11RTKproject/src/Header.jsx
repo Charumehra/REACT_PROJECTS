@@ -18,8 +18,7 @@ function Header() {
             </a>
           </li>
         </ul>
-      </nav>
-      <ClearCart /> 
+      </nav> 
       <AddToCart />
     </header>
   );
