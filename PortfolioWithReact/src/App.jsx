@@ -21,6 +21,7 @@ import png5 from "./assets/png5.png";
 import png6 from "./assets/png6.png";
 import png7 from "./assets/png7.png";
 import png8 from "./assets/png8.png";
+import png9 from "./assets/png9.png";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -333,7 +334,14 @@ function App() {
               desc:"Used React to create a web app for a tech competition.",
               img: png8,
               link:"https://github.com/UmaShankarBharawa/TEN-Tech-Competition-Engine"
+            },
+            {
+              title: "Redux Toolkit Project - Shop4uhh",
+              desc:"Shop4uhh is a fast React shopping app with seamless cart management using Redux Toolkit.",
+              img: png9,
+              link:"https://react-projects-bzck.vercel.app/"
             }
+
           ].map((project) => (
             <motion.div
               key={project.title}
